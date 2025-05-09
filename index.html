@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>My Interactive Portfolio</h1>
+        <p>Press <kbd>Shift + ?</kbd> for keyboard shortcuts</p>
+    </header>
+
+    <nav>
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="about">About Me</button>
+            <button class="tab-btn" data-tab="gallery">My Work</button>
+            <button class="tab-btn" data-tab="contact">Contact</button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- About Section -->
+        <section id="about" class="tab-content active">
+            <h2>About Me</h2>
+            <p>Welcome to my interactive portfolio! Hover over the colored buttons below to see hover effects:</p>
+            
+            <div class="color-buttons">
+                <button class="color-btn" style="background-color: #ff7675;">Hover Me</button>
+                <button class="color-btn" style="background-color: #74b9ff;">Hover Me</button>
+                <button class="color-btn" style="background-color: #55efc4;">Hover Me</button>
+            </div>
+
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header">My Skills</div>
+                    <div class="accordion-content">
+                        <p>HTML, CSS, JavaScript, React, Node.js</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">My Experience</div>
+                    <div class="accordion-content">
+                        <p>5+ years of web development experience</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">My Education</div>
+                    <div class="accordion-content">
+                        <p>Bachelor's in Computer Science</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="tab-content">
+            <h2>My Work</h2>
+            <div class="gallery-container">
+                <button id="prev-btn">❮</button>
+                <div class="gallery">
+                    <img src="https://picsum.photos/id/1/600/400" alt="Project 1" class="active">
+                    <img src="https://picsum.photos/id/2/600/400" alt="Project 2">
+                    <img src="https://picsum.photos/id/3/600/400" alt="Project 3">
+                    <img src="https://picsum.photos/id/4/600/400" alt="Project 4">
+                </div>
+                <button id="next-btn">❯</button>
+            </div>
+            <div class="gallery-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
+            </div>
+            <p class="gallery-tip">Double-click any image for a surprise!</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="tab-content">
+            <h2>Contact Me</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name <span class="required">*</span></label>
+                    <input type="text" id="name" name="name" required>
+                    <span class="error-message"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required>
+                    <span class="error-message"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password <span class="required">*</span></label>
+                    <input type="password" id="password" name="password" required>
+                    <span class="error-message"></span>
+                    <div class="password-strength">
+                        <div class="strength-bar"></div>
+                        <span class="strength-text">Password strength</span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message <span class="required">*</span></label>
+                    <textarea id="message" name="message" required></textarea>
+                    <span class="error-message"></span>
+                </div>
+                
+                <button type="submit" id="submit-btn">Send Message</button>
+                <div id="form-status"></div>
+            </form>
+        </section>
+    </main>
+
+
+    <footer>
+        <p>© 2025 Interactive Portfolio. Press any key to see the keycode.</p>
+        <div id="keypress-display"></div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
